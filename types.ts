@@ -1,11 +1,11 @@
+export type Page = 'home' | 'poetry' | 'media' | 'booking';
 
-export type Page = 'home' | 'shayari' | 'gallery' | 'comedy';
-
-export interface ShayariPost {
+export interface PoetryItem {
   id: number;
   title: string;
   author: string;
   content: string[];
+  mood: 'motivational' | 'romantic' | 'sad' | 'life';
 }
 
 export interface GalleryImage {
@@ -14,9 +14,10 @@ export interface GalleryImage {
   alt: string;
 }
 
-export interface ComedyVideo {
+export interface ServicePackage {
   id: number;
   title: string;
-  artist: string;
-  embedUrl: string;
+  price: string;
+  duration: string;
+  highlights: string[];
 }

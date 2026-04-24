@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import type { Page } from './types';
 import Header from './components/Header';
@@ -13,11 +12,11 @@ const App: React.FC = () => {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'shayari':
+      case 'poetry':
         return <ShayariPage />;
-      case 'gallery':
+      case 'media':
         return <GalleryPage />;
-      case 'comedy':
+      case 'booking':
         return <ComedyPage />;
       case 'home':
       default:
@@ -26,11 +25,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen font-sans antialiased">
+    <div className="bg-slate-950 text-gray-100 min-h-screen font-sans antialiased">
       <Header currentPage={currentPage} navigate={setCurrentPage} />
-      <main className="pt-16 sm:pt-20">
-        {renderPage()}
-      </main>
+      <main className="pt-16 sm:pt-20">{renderPage()}</main>
       <Footer />
     </div>
   );
